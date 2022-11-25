@@ -92,18 +92,37 @@
 		let deposit_persent=10;
 		let month_name=["Січень","Лютий","Березень","Квітень","Травень","Червень","Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"];
 		let	month_persent=[];
-		let deposit=[];
-		
+		let deposit_e=[];
+		let deposit_d=[];
+
+
 		for (let i=0; i<=11; i++)
 			{ month_persent[i]=1+parseInt(Math.random()*10)/40;
 			  document.write('Курс: '+month_name[i] +'='+ month_persent[i]+'</br>');}
-		document.write('</br>');
 		
-		deposit[0]=sum_depos+(sum_depos*deposit_persent/100);
+		
+		deposit_e[0]=sum_depos+(sum_depos*deposit_persent/100);
 		
 		for (let i=1; i<=11; i++)
-			{ deposit[i]=deposit[i-1]+(deposit[i-1]*deposit_persent/100); 
-		document.write('Накопичено ЕВРО: '+month_name[i] +'='+(Math.round(deposit[i]).toFixed(2))+'</br>');}
+			{ deposit_e[i]=deposit_e[i-1]+(deposit_e[i-1]*deposit_persent/100); }
+
+		
+
+		for (let i=0; i<=11; i++)
+			{ deposit_d[i]=deposit_e[i]*month_persent[i];}
+
+		document.write('</br>');
+		document.write('Сума депозиту в ЕВРО: '+sum_depos+' євро </br>');
+
+		let month_depos=parseInt(prompt('Вкажіть Місяць в якому хочете зняти кошти:'));
+
+		let x=deposit_d[month_depos-1];
+
+		if (month_depos>0) 
+			{let y=deposit_d[month_depos-1]-deposit_d[month_depos-2];
+			if (y>=500) {document.write('</br> сума доступна для зняття в '+month_name[month_depos-1]+': '+Math.round(x/2).toFixed(2) +' долари')}
+			else {document.write('Зняття не можливе. Сума накопичення в цьому місяці менша 500$')}
+		}
 		
 
 	}
