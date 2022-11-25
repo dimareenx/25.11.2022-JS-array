@@ -95,13 +95,15 @@
 		let deposit=[];
 		
 		for (let i=0; i<=11; i++)
-			{ month_persent[i]=1+parseInt(Math.random()*10)/40;}
-		document.write(month_persent+'</br></br>');
+			{ month_persent[i]=1+parseInt(Math.random()*10)/40;
+			  document.write('Курс: '+month_name[i] +'='+ month_persent[i]+'</br>');}
+		document.write('</br>');
 		
 		deposit[0]=sum_depos+(sum_depos*deposit_persent/100);
 		
 		for (let i=1; i<=11; i++)
-			{ deposit[i]=((deposit[i-1]+(deposit[i-1]*deposit_persent/100))*100)/100; document.write(deposit[i]+'</br>');}
+			{ deposit[i]=deposit[i-1]+(deposit[i-1]*deposit_persent/100); 
+		document.write('Накопичено ЕВРО: '+month_name[i] +'='+(Math.round(deposit[i]).toFixed(2))+'</br>');}
 		
 
 	}
