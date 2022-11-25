@@ -52,8 +52,12 @@
 
 		for (let i=0; i<=4; i++)
 			{ num1[i]=parseInt(Math.random()*100);
-			  num2[i]=parseInt(Math.random()*100);}
-		
+			  num2[i]=parseInt(Math.random()*100);
+			}
+
+		for (let j=0; j<=4; j++)
+			{ num3[j]=num1[j];
+			  num3[j+5]=num2[j];}
 		document.write('num1='+num1+'</br> num2='+num2+'</br> num3='+num3);
 
 
