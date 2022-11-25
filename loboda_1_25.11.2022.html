@@ -60,6 +60,27 @@
 
 
 	}
+
+
+	function mas5() {
+		let week=[];
+		let weekN=["Понеділок","Вівторок","Середа","Четвер","П'ятниця","Субота","Неділя"]
+		for (let i=0; i<=6; i++)
+			{ week[i]=parseInt(Math.random()*200);}
+
+		document.write(week);
+
+		let sum=0;
+		for (let i=0; i<=6; i++)
+			{sum=sum+week[i];}
+
+		let aver=sum/7;
+		document.write('</br></br> Середня витрачена сума='+ aver +'</br>');
+		document.write('</br> Сума всіх витрачених коштів за тиждень ='+ sum +'</br>');
+		document.write('</br>Дні коли сума витрат була більше ніж 100$ </br></br>');
+		for (let i=0; i<=6; i++)
+			{if (week[i]>100) {document.write(weekN[i]+'='+ week[i]+'</br>'); }; }
+	}
 	</script>
 </head>
 
@@ -84,6 +105,12 @@
 	<br><input type="button" value="zadacha_4" onclick="mas4()">
 	<br><br>
 	
+	5. Пользователь вводит данные о своих расходах в доларах в неделю (каждый день). написать программу, которая вычисляет:
+	<br>а) среднюю (за неделю) потраченую сумму
+	<br>б) общую сумму, потраченую пользователем за неделю
+	<br>в) количество дней и их названия (например, "вторник"), когда сумма расходов (в день) превысила 100 долларов.
+	<br><input type="button" value="zadacha_5" onclick="mas5()">
+	<br><br>
 
 </body>
 </html>
