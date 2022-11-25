@@ -89,12 +89,17 @@
 
 	function mas6(){
 		let sum_depos=parseInt(prompt('Вкажіть суму на депозиті'));
+		let deposit_persent=10;
 		let month_name=["Січень","Лютий","Березень","Квітень","Травень","Червень","Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"];
 		let	month_persent=[];
 		let deposit=[];
 		for (let i=0; i<=11; i++)
-			{ month_persent[i]=parseInt(Math.random()*10)/10;}
-		document.write(month_persent);
+			{ month_persent[i]=1+parseInt(Math.random()*10)/40;}
+		document.write(month_persent+'</br></br>');
+		deposit[0]=sum_depos+(sum_depos*deposit_persent/100);
+		for (let i=1; i<=11; i++)
+			{ deposit[i]=((deposit[i-1]+(deposit[i-1]*deposit_persent/100))*100)/100; document.write(deposit[i]+'</br>');}
+		
 
 	}
 	</script>
