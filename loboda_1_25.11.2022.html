@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loboda-1-25.11.2022-JS</title>
+
+	<script>
+	function mas1() {
+		const num=[5,4,6,3,7,8,9,6,1,0];
+		let max=num[0];
+		let min=num[0];
+		for (var i = 1; i <= 9; i++) 
+		{
+			if (num[i]>=max) {max=num[i]};
+			if (num[i]<=min) {min=num[i]};
+		}
+		document.write('min='+min + ',  max=' + max);
+	}
+
+	function mas2(){
+		let num=[];
+		for (let i=0; i<=9; i++)
+			{ num[i]=parseInt(Math.random()*100);}
+		document.write('а) масив = '+ num+ ',</br>');
+		document.write('б) четные элементы масива = ');
+		for (let j=0; j<=9; j=j+2)
+			{ document.write(num[j]+',');};
+		
+		let sum=0;
+		for (let g=0; g<=9; g++)
+			{ sum=sum+num[g];};
+		document.write('</br> в) сумма всех = '+sum);
+	}
+	</script>
+</head>
+
+<body>
+	<br><br>
+	1.В одномерном массиве, размером 10 чисел определить минимальный и максимальный элементы.
+	<br><input type="button" value="zadacha_1" onclick="mas1()">
+	<br><br>
+
+	2.Создать масив из 10 случайных чисел и написать несколько функций:<br>
+	а) функция принимает масив и выводит его<br>
+	б) функция принимает масив и выводит только четные <br>
+	в) функция принимает масив и выводит сумму всех его елементов
+	<br><input type="button" value="zadacha_2" onclick="mas2()">
+	<br><br>
+	3. <br><br>
+	
+
+</body>
+</html>
